@@ -1,115 +1,19 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Undangan Pernikahan</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-
+<title>Undangan</title>
 <style>
-body{
-  margin:0;
-  font-family:'Playfair Display', serif;
-  background:#f8f3ef;
-  text-align:center;
-  overflow-x:hidden;
-}
-
-.cover{
-  height:100vh;
-  background:#b76e79;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-button{
-  margin-top:20px;
-  padding:12px 30px;
-  font-size:18px;
-  border:none;
-  border-radius:8px;
-  background:white;
-  color:#b76e79;
-}
-
-.section{
-  padding:60px 20px;
-}
-
-h1{
-  font-size:40px;
-  color:#b76e79;
-}
-
-.countdown{
-  font-size:26px;
-  margin-top:20px;
-}
-
-.maps a{
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 20px;
-  background:#b76e79;
-  color:white;
-  border-radius:8px;
-  text-decoration:none;
-}
+body{font-family:sans-serif;text-align:center;padding:50px;background:#f8f3ef;}
+h1{color:#b76e79;font-size:40px;}
 </style>
 </head>
-
 <body>
 
-<!-- COVER -->
-<div class="cover">
-  <h3>Undangan Pernikahan</h3>
-  <button onclick="bukaUndangan()">Buka Undangan</button>
-</div>
-
-<!-- ISI -->
-<div class="section">
-  <h1>Rina & Da</h1>
-  <p>Akan melangsungkan pernikahan pada:</p>
-  <p><b>Minggu, 10 Maret 2026</b></p>
-
-  <div class="countdown" id="countdown"></div>
-
-  <div class="maps">
-    <a href="https://maps.google.com" target="_blank">Lihat Lokasi Acara</a>
-  </div>
-</div>
-
-<!-- MUSIK -->
-<audio id="musik" loop>
-  <source src="musik.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-function bukaUndangan(){
-  const audio = document.getElementById("musik");
-  audio.volume = 0.6;   // volume 60%
-  audio.play();
-  window.scrollTo({top:window.innerHeight, behavior:'smooth'});
-}
-
-const target = new Date("March 10, 2026 09:00:00").getTime();
-setInterval(()=>{
-  const now = new Date().getTime();
-  const sisa = target - now;
-
-  const hari = Math.floor(sisa / (1000*60*60*24));
-  const jam  = Math.floor((sisa / (1000*60*60)) % 24);
-  const menit= Math.floor((sisa / (1000*60)) % 60);
-
-  document.getElementById("countdown").innerText =
-    hari + " Hari " + jam + " Jam " + menit + " Menit menuju hari bahagia";
-},1000);
-</script>
+<h1>Undangan Pernikahan</h1>
+<p>Rina & Da</p>
+<p>Minggu, 10 Maret 2026</p>
 
 </body>
 </html>
-
